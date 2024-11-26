@@ -88,7 +88,7 @@ function App() {
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
                 <div className="flex items-center gap-2">
                   <Clock className="text-yellow-400" />
-                  <span>Atendimento em até 40 minutos</span>
+                  <span>Atendimento no local em até 40 minutos</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="text-yellow-400" />
@@ -127,7 +127,7 @@ function App() {
               {[
                 {
                   title: "Desentupimento de calhas e águas pluviais",
-                  image: "../img_Água pluviais e calhas.webp",
+                  image: "../img_Agua_pluviais_e_calhas.webp",
                   subtitle: "Evitamos alagamentos e garantimos o fluxo eficiente da água com serviços rápidos e eficazes"
                 },
                 {
