@@ -127,32 +127,32 @@ function App() {
               {[
                 {
                   title: "Desentupimento de calhas e águas pluviais",
-                  image: "../img_Agua_pluviais_e_calhas.webp",
+                  image: "/img_Agua_pluviais_e_calhas.webp",
                   subtitle: "Evitamos alagamentos e garantimos o fluxo eficiente da água com serviços rápidos e eficazes"
                 },
                 {
                   title: "Desentupimento de pia de cozinha e caixa de gordura",
-                  image: "../img_Caixa de gordura.png",
+                  image: "/img_Caixa de gordura.png",
                   subtitle: "Removemos entupimentos com eficiência, garantindo o funcionamento ideal da pia de cozinha e da caixa de gordura"
                 },
                 {
                   title: "Desentupimento de privadas e caixa de esgoto",
-                  image: "../img_Privadas.png",
+                  image: "/img_Privadas.png",
                   subtitle: "Desobstruímos privadas e caixas de esgoto com rapidez, assegurando higiene e o funcionamento adequado do sistema"
                 },
                 {
                   title: "Desentupimento de ralos",
-                  image: "../img_Ralos.png",
+                  image: "/img_Ralos.png",
                   subtitle: "Desobstruímos ralos com eficiência, garantindo o fluxo adequado da água e evitando alagamentos"
                 },
                 {
                   title: "Limpa fossa",
-                  image: "../img_Limpa Fossa.webp",
+                  image: "/img_Limpa Fossa.webp",
                   subtitle: "Realizamos limpeza de fossas com eficiência, garantindo higiene, segurança e o correto funcionamento do sistema de saneamento"
                 },
                 {
                   title: "Detetização de pagas",
-                  image: "../img_Detetização.png",
+                  image: "/img_Detetização.png",
                   subtitle: "Eliminamos pragas com técnicas eficazes, garantindo segurança, higiene e proteção para sua residência ou empresa"
                 }
               ].map((service, index) => (
@@ -285,7 +285,7 @@ function App() {
           className="fixed bottom-6 right-6 p-4 rounded-full shadow-lg z-20 transition-transform hover:scale-110"
         >
           <img
-            src="../Icone_Whatsapp.png"
+            src="/Icone_Whatsapp.png"
             alt="WhatsApp"
             className="w-20 h-20"
           />
