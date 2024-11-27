@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 import { Phone, Clock, CheckCircle2, MessageCircle, PhoneCall, Timer, CreditCard, DollarSign } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import { Header } from './components/Header';
@@ -28,6 +29,13 @@ function App() {
     "Limpa fossa",
     "Limpeza Pós obra / colunas prediais"
   ];
+
+  useEffect(() => {
+    const favicon = document.querySelector("link[rel='icon']");
+    if (favicon) {
+      favicon.setAttribute('href', '/Icone_Titulo.png'); // Caminho para o novo ícone
+    }
+  }, []);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -66,12 +74,15 @@ function App() {
   return (
     <div className="relative">
       <Header phoneNumber={phoneNumber} formattedPhoneNumber={formattedPhoneNumber} />
-      
+      <div>
+        <Helmet>
+          <title>D.D. Associados - Desentupidora e Detetizadora</title>
+        </Helmet>
+      </div>
       {/* Add margin-top to account for fixed header */}
       <div className="pt-20">
         {/* Hero Section */}
         <div 
-          //className="min-h-screen bg-cover bg-center relative"
           className="min-h-[500px] bg-cover bg-center relative" 
           style={{
             backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?auto=format&fit=crop&q=80")'
