@@ -9,32 +9,40 @@ interface HeaderProps {
 export function Header({ phoneNumber, formattedPhoneNumber }: HeaderProps) {
   return (
     <header className="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
-  {/* Conteúdo do header */}
-      <div className="container mx-auto px-1">
-        <div className="flex items-center justify-between h-20">
+      {/* Conteúdo do Header */}
+      <div className="container mx-auto px-4 sm:px-2">
+        <div className="flex flex-wrap items-center justify-between h-auto py-3 sm:py-0">
           {/* Logo */}
-          <div className="flex items-center" style={{ marginLeft: '-8px' }}>
+          <div className="flex items-center mb-3 sm:mb-0">
             <img
               src="../img_Logo_Final.png"
               alt="D.D. Associados"
-              className="h-20 w-auto"
+              className="h-16 w-auto sm:h-20"
             />
             <div className="ml-2">
-              <h1 className="text-xl font-bold text-gray-900">D.D. Associados</h1>
-              <p className="text-sm text-gray-600">Desentupidora & Detetizadora</p>
+              <h1 className="text-base sm:text-lg font-bold text-gray-900">
+                D.D. Associados
+              </h1>
+              <p className="text-xs text-gray-600">
+                Desentupidora & Detetizadora
+              </p>
             </div>
           </div>
 
           {/* Contact Info */}
-          <div className="flex items-center">
-            <div className="text-right mr-4">
-              <a href={`tel:${phoneNumber}`} className="text-xl font-bold text-gray-900 hover:text-yellow-500 transition-colors">
+          <div className="flex items-center text-center sm:text-right">
+            <div>
+              <a
+                href={`tel:${phoneNumber}`}
+                className="block text-sm sm:text-lg font-bold text-gray-900 hover:text-yellow-500 transition-colors"
+              >
                 {formattedPhoneNumber}
               </a>
-              <div className="flex items-center text-sm text-gray-600">
+              <div className="flex items-center justify-center sm:justify-end text-xs text-gray-600">
                 <Clock className="w-4 h-4 mr-1" />
                 <span>
-                  Atendimento 24h <br /> 7 dias por semana
+                  Atendimento 24h <br />
+                  7 dias por semana
                 </span>
               </div>
             </div>
