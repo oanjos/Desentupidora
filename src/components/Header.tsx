@@ -21,7 +21,7 @@ export function Header({ phoneNumber, formattedPhoneNumber }: HeaderProps) {
             />
             <div className="ml-2">
               <h1 className="text-lg font-bold text-gray-900">D.D. Associados</h1>
-              <p className="text-xs text-gray-600">Desentupidora & Detetizadora</p>
+              <p className="text-xs text-gray-600">Desentupidora & Dedetizadora</p>
             </div>
           </div>
 

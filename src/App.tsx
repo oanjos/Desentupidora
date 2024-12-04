@@ -21,13 +21,13 @@ function App() {
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   const serviceTypes = [
-    "Detetização de pragas",
     "Desentupimento de calhas e águas pluviais",
     "Desentupimento de pia de cozinha e caixa de gordura",
     "Desentupimento de privadas e caixa de esgoto",
     "Desentupimento de ralos",
     "Limpa fossa",
-    "Limpeza Pós obra / colunas prediais"
+    "Limpeza Pós obra / colunas prediais",
+    "Dedetização de pragas"
   ];
 
   useEffect(() => {
@@ -162,8 +162,8 @@ function App() {
                   subtitle: "Realizamos limpeza de fossas com eficiência, garantindo higiene, segurança e o correto funcionamento do sistema de saneamento"
                 },
                 {
-                  title: "Detetização de pagas",
-                  image: "/img_Detetização.png",
+                  title: "Dedetização de pagas",
+                  image: "/img_Dedetização.png",
                   subtitle: "Eliminamos pragas com técnicas eficazes, garantindo segurança, higiene e proteção para sua residência ou empresa"
                 }
               ].map((service, index) => (
