@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 import { Phone, Clock, CheckCircle2, MessageCircle, PhoneCall, Timer, CreditCard, DollarSign } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import { Header } from './components/Header';
+import useGeoLocation from "react-ipgeolocation";
 
 // Initialize EmailJS
 emailjs.init("G7NS1zSwonavgRhPe");
@@ -30,11 +31,40 @@ function App() {
     "Dedetização de pragas"
   ];
 
+  const [ip, setIp] = useState("");
+  const [city, setCity] = useState(""); // Start with empty city
+
   useEffect(() => {
+    // Update favicon
     const favicon = document.querySelector("link[rel='icon']");
     if (favicon) {
-      favicon.setAttribute('href', '/Icone_Titulo.png'); // Caminho para o novo ícone
+      favicon.setAttribute('href', '/Icone_Titulo.png'); // Path to the favicon
     }
+    
+    fetch("api.ipify.org/?format=json")
+              .then ((Response) => Response.json())
+              .then((data) => {
+               if(data.ip) {
+                setIp(data.ip);
+              }
+            })    
+            .catch((error) => {
+              console.error("Error fetching location:", error);
+              setCity(""); // Keep city as empty if there's an error
+            });
+    
+    // Fetch location data based on IP
+    fetch("https://ip-api.com/json/"+ip)
+      .then((response) => response.json())
+      .then((data) => {
+        if (data && data.city) {
+          setCity(data.city); // Update city based on IP response
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching location:", error);
+        setCity(""); // Keep city as empty if there's an error
+      });
   }, []);
 
   async function handleSubmit(e: React.FormEvent) {
@@ -94,8 +124,12 @@ function App() {
                 Desentupimento Profissional
                 <span className="block text-yellow-400 mt-2">a partir de R$79,90/metro</span>
               </h1>
-              <p className="text-xl mb-8">Atendimento imediato em todo estado de São Paulo</p>
-              
+              {/* Conditional text */}
+              <p className="text-xl mb-8">
+                {city
+                  ? `Atendimento imediato em toda cidade de ${city} e região`
+                  : "Atendimento imediato em todo estado de São Paulo"}
+              </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
                 <div className="flex items-center gap-2">
                   <Clock className="text-yellow-400" />
