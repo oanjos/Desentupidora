@@ -31,7 +31,6 @@ function App() {
     "Dedetização de pragas"
   ];
 
-  const [ip, setIp] = useState("");
   const [city, setCity] = useState(""); // Start with empty city
 
   useEffect(() => {
@@ -41,20 +40,8 @@ function App() {
       favicon.setAttribute('href', '/Icone_Titulo.png'); // Path to the favicon
     }
     
-    fetch("api.ipify.org/?format=json")
-              .then ((Response) => Response.json())
-              .then((data) => {
-               if(data.ip) {
-                setIp(data.ip);
-              }
-            })    
-            .catch((error) => {
-              console.error("Error fetching location:", error);
-              setCity(""); // Keep city as empty if there's an error
-            });
-    
     // Fetch location data based on IP
-    fetch("https://ip-api.com/json/"+ip)
+    fetch("https://pro.ip-api.com/json/?fields=61439&key=wfBFON19QygvNVu")
       .then((response) => response.json())
       .then((data) => {
         if (data && data.city) {
@@ -122,14 +109,22 @@ function App() {
             <div className="max-w-3xl text-white">
               <h1 className="text-5xl font-bold mb-6">
                 Desentupimento Profissional
-                <span className="block text-yellow-400 mt-2">a partir de R$79,90/metro</span>
+                <span className="block text-white-400 mt-2">a partir de R$79,90/metro</span>
               </h1>
               {/* Conditional text */}
               <p className="text-xl mb-8">
-                {city
-                  ? `Atendimento imediato em toda cidade de ${city} e região`
-                  : "Atendimento imediato em todo estado de São Paulo"}
-              </p>
+              {city ? (
+                <>
+                  Atendimento imediato em toda cidade de{" "}
+                  <span className="text-yellow-400 text-4xl font-bold">{city}</span> e região
+                </>
+              ) : (
+                <>
+                  Atendimento imediato em todo estado de{" "}
+                  <span className="text-yellow-400 text-2xl font-bold">São Paulo</span>
+                </>
+              )}
+            </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
                 <div className="flex items-center gap-2">
                   <Clock className="text-yellow-400" />
