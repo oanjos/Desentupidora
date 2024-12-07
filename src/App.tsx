@@ -107,10 +107,13 @@ function App() {
         >
           <div className="container mx-auto px-4 py-20">
             <div className="max-w-3xl text-white">
-              <h1 className="text-5xl font-bold mb-6">
-                Desentupimento Profissional
-                <span className="block text-white-400 mt-2">a partir de R$79,90/metro</span>
-              </h1>
+            <h1 className="text-5xl font-bold mb-6">
+              Desentupimento Profissional
+              <span className="block mt-2 text-white-400 font-normal">
+                a partir de{" "}
+                <span className="text-yellow-400 text-5xl font-bold">R$79,90/metro</span>
+              </span>
+            </h1>
               {/* Conditional text */}
               <p className="text-xl mb-8">
               {city ? (
