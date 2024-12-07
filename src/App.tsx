@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 import { Phone, Clock, CheckCircle2, MessageCircle, PhoneCall, Timer, CreditCard, DollarSign } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import { Header } from './components/Header';
-import useGeoLocation from "react-ipgeolocation";
+
 
 // Initialize EmailJS
 emailjs.init("G7NS1zSwonavgRhPe");
@@ -32,6 +32,7 @@ function App() {
   ];
 
   const [city, setCity] = useState(""); // Start with empty city
+  const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
     // Update favicon
@@ -49,8 +50,10 @@ function App() {
         }
       })
       .catch((error) => {
-        console.error("Error fetching location:", error);
-        setCity(""); // Keep city as empty if there's an error
+        console.error("Erro ao buscar a cidade:", error);
+      })
+      .finally(() => {
+        setIsReady(true); // Ativa a visibilidade após a conclusão
       });
   }, []);
 
@@ -115,19 +118,21 @@ function App() {
               </span>
             </h1>
               {/* Conditional text */}
-              <p className="text-xl mb-8">
-              {city ? (
-                <>
-                  Atendimento imediato em toda cidade de{" "}
-                  <span className="text-yellow-400 text-4xl font-bold">{city}</span> e região
-                </>
-              ) : (
-                <>
-                  Atendimento imediato em todo estado de{" "}
-                  <span className="text-yellow-400 text-4xl font-bold">São Paulo</span>
-                </>
+              {isReady && (
+                <p className="text-xl mb-8">
+                  {city ? (
+                    <>
+                      Atendimento imediato em toda cidade de{" "}
+                      <span className="text-yellow-400 text-4xl font-bold">{city}</span> e região
+                    </>
+                  ) : (
+                    <>
+                      Atendimento imediato em todo estado de{" "}
+                      <span className="text-yellow-400 text-4xl font-bold">São Paulo</span>
+                    </>
+                  )}
+                </p>
               )}
-            </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
                 <div className="flex items-center gap-2">
                   <Clock className="text-yellow-400" />
