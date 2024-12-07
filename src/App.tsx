@@ -124,7 +124,7 @@ function App() {
               ) : (
                 <>
                   Atendimento imediato em todo estado de{" "}
-                  <span className="text-yellow-400 text-2xl font-bold">São Paulo</span>
+                  <span className="text-yellow-400 text-4xl font-bold">São Paulo</span>
                 </>
               )}
             </p>
