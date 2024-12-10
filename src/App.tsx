@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
-import { Phone, Clock, CheckCircle2, MessageCircle, PhoneCall, Timer, CreditCard, DollarSign } from 'lucide-react';
+import { Phone, Clock, CheckCircle2, MessageCircle, PhoneCall, Timer, CreditCard, DollarSign, Car, ShieldCheck } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import { Header } from './components/Header';
 
@@ -105,7 +105,7 @@ function App() {
         <div 
           className="min-h-[500px] bg-cover bg-center relative" 
           style={{
-            backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?auto=format&fit=crop&q=80")'
+            backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("/img_Fundo_Inicial.avif")'
           }}
         >
           <div className="container mx-auto px-4 py-20">
@@ -135,7 +135,7 @@ function App() {
               )}
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
                 <div className="flex items-center gap-2">
-                  <Clock className="text-yellow-400" />
+                  <Clock className="text-yellow-400 w-8 h-8" />
                   <span>Atendimento no local em até 40 minutos</span>
                 </div>
                 <div className="flex items-center gap-2">
@@ -143,7 +143,7 @@ function App() {
                   <span>Visita gratuita</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Timer className="text-yellow-400" />
+                  <Car className="text-yellow-400 w-10 h-10" />
                   <span>Temos uma equipe disponível no seu bairro</span>
                 </div>
                 <div className="flex items-center gap-2">
@@ -153,6 +153,10 @@ function App() {
                 <div className="flex items-center gap-2">
                   <CreditCard className="text-yellow-400" />
                   <span>Parcelamento sem juros</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <ShieldCheck className="text-yellow-400 w-8 h-8" />
+                  <span>Seu problema resolvido rapidamente</span>
                 </div>
               </div>
 
@@ -199,7 +203,7 @@ function App() {
                   subtitle: "Realizamos limpeza de fossas com eficiência, garantindo higiene, segurança e o correto funcionamento do sistema de saneamento"
                 },
                 {
-                  title: "Dedetização de pagas",
+                  title: "Dedetização de pragas",
                   image: "/img_Dedetização.png",
                   subtitle: "Eliminamos pragas com técnicas eficazes, garantindo segurança, higiene e proteção para sua residência ou empresa"
                 }
@@ -239,7 +243,7 @@ function App() {
         {/* Contact Form Section */}
         <div className="py-16 bg-gray-50">
           <div className="container mx-auto px-4 max-w-2xl">
-            <h2 className="text-3xl font-bold text-center mb-12">Entraremos em contato</h2>
+            <h2 className="text-3xl font-bold text-center mb-12">Entraremos em contato em minutos</h2>
             <form onSubmit={handleSubmit} className="space-y-6 bg-white p-8 rounded-lg shadow-md">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
