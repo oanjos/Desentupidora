@@ -205,7 +205,7 @@ function App() {
                 {
                   title: "Dedetização de pragas",
                   image: "/img_Dedetização.png",
-                  subtitle: "Eliminamos pragas com técnicas eficazes, garantindo segurança, higiene e proteção para sua residência ou empresa"
+                  subtitle: "Eliminamos ratos, baratas, formigas, cupins, pulgas e carapatos com técnicas eficazes, garantindo segurança, higiene e proteção para sua residência ou empresa"
                 }
               ].map((service, index) => (
                 <div key={index} className="bg-white rounded-lg overflow-hidden shadow-lg">
